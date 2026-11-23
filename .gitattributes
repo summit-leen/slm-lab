@@ -1,0 +1,16 @@
+# 文本按 LF 存，Windows 上检出可保持原样
+* text=auto eol=lf
+
+*.py    text eol=lf
+*.md    text eol=lf
+*.ps1   text eol=crlf
+*.csv   text eol=lf
+*.svg   text
+*.log   text
+
+# 二进制：不要做换行/编码转换，也不要按文本 diff
+*.npy  binary
+*.npz  binary
+*.png  binary
+*.jpg  binary
+*.zip  binary

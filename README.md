@@ -1,6 +1,24 @@
 # SLM 控制环境（Windows）
 
-给液晶 SLM（当作第二块显示器使用）输出相位/灰度图案的最小可用环境。
+给液晶 SLM（当作第二块显示器使用）输出相位/灰度图案的最小可用环境，
+外加一套把它当"编码孔径成像系统"用的采集—判据—重建工具链。
+
+## 0. 仓库结构
+
+```
+slm-lab/
+├── code/        全部脚本（.py + 4 个 PowerShell 辅助脚本），互相同目录 import
+├── data/        实测数据：2026-11-17 掩模成像（有效采集 + 结果包），见 data/README.md
+├── docs/        工作日志、多掩膜光路图绘制说明、辅助文本
+├── figures/     过程图与对比图（PNG/JPG，供文档和 PPT 引用）
+├── patterns/    SLM 相位图案产物（npy/png/csv，可由 seed 复现）
+├── logs/        历史采集日志（.log）
+├── runs/        本地实时采集目录（已 .gitignore，不入库）
+└── captures/    相机原始抓图（已 .gitignore）
+```
+
+脚本都在仓库根目录下用 `python code/xxx.py` 调用；脚本内部的相对路径
+（`runs/…`、`patterns/…`）按当前工作目录解析。
 
 ## 1. 硬件与显示配置
 
@@ -10,7 +28,7 @@
 | SLM 通道 | `\\.\DISPLAY2` 1024x768，100% 缩放，位于 (2560, 0)，HDMI 输出（RGT1352） |
 | 显示模式 | **扩展**（不能是"复制"；复制模式下 SLM 拿到的是 2560x1600 缩放插值后的画面） |
 
-`python slm_show.py --info` 可随时确认拓扑。若重启后变回复制模式，需在
+`python code/slm_show.py --info` 可随时确认拓扑。若重启后变回复制模式，需在
 设置 → 系统 → 屏幕 里重新选"扩展这些显示器"，并把第二屏设成 100% 缩放。
 
 ## 2. Python 环境
@@ -32,12 +50,12 @@ python -m pip install --user --no-cache-dir numpy wxpython
 ## 3. 用法
 
 ```cmd
-python slm_show.py --info                    :: 看显示器拓扑
-python slm_show.py frame --hold 20           :: 对齐框（边框 + 十字 + 角标 + 128px 点阵）
-python slm_show.py grating --period 16 --hold 30
-python slm_show.py checker --hold 10         :: 1 像素棋盘 = 检验 1:1 最狠的图
-python slm_show.py --file phase.npy --hold 30  :: 自定义 uint8 数组
-python slm_show.py grating --bench 120       :: 测帧率
+python code/slm_show.py --info                    :: 看显示器拓扑
+python code/slm_show.py frame --hold 20           :: 对齐框（边框 + 十字 + 角标 + 128px 点阵）
+python code/slm_show.py grating --period 16 --hold 30
+python code/slm_show.py checker --hold 10         :: 1 像素棋盘 = 检验 1:1 最狠的图
+python code/slm_show.py --file phase.npy --hold 30  :: 自定义 uint8 数组
+python code/slm_show.py grating --bench 120       :: 测帧率
 ```
 
 图案：`white` `black` `grating` `checker` `comb` `blaze` `frame`。
@@ -140,9 +158,9 @@ slmpy 在**工作线程**里创建 wx 窗口，而 Windows 版 wxWidgets 要求 
 ## 6. 把 SLM 当透镜用（`slm_lens.py`）
 
 ```cmd
-python slm_lens.py --f 600 --hold 30        :: 会聚透镜，焦距 600 mm
-python slm_lens.py --f 600 --diag           :: 只算不显示，打印设计诊断
-python slm_lens.py --f 800 --save l800.npy  :: 存成数组
+python code/slm_lens.py --f 600 --hold 30        :: 会聚透镜，焦距 600 mm
+python code/slm_lens.py --f 600 --diag           :: 只算不显示，打印设计诊断
+python code/slm_lens.py --f 800 --save l800.npy  :: 存成数组
 ```
 
 相位图 `phi(r) = -pi r^2/(lambda f)`，按 2pi 取模（菲涅尔），再线性映射到 8 bit。
@@ -176,10 +194,10 @@ python slm_lens.py --f 800 --save l800.npy  :: 存成数组
 每枚透镜的相位还是 `phi = -pi r^2/(lambda f)` 按 2pi 取模，外面是 0 相位（gray 0）。
 
 ```cmd
-python random_lens_array.py --diag                  :: 只算，打印参数表 + 自检
-python random_lens_array.py --show --hold 30        :: 显示到 SLM 30 s
-python random_lens_array.py --save rla --show       :: 存 npy/png/csv 并显示
-python random_lens_array.py --n 100 --seed 7        :: 换一版布局
+python code/random_lens_array.py --diag                  :: 只算，打印参数表 + 自检
+python code/random_lens_array.py --show --hold 30        :: 显示到 SLM 30 s
+python code/random_lens_array.py --save rla --show       :: 存 npy/png/csv 并显示
+python code/random_lens_array.py --n 100 --seed 7        :: 换一版布局
 ```
 
 输出（`--save` 前缀 `rla`）：
@@ -234,14 +252,14 @@ python random_lens_array.py --n 100 --seed 7        :: 换一版布局
 
 ### 7.1 采一组 PSF
 
-    python psf_capture.py --out runs\psf01 --auto --n 32 --frames 16 --bin 4 --seed 0 --z-mm 40 --d-mm 40 --pinhole-um 15
+    python code/psf_capture.py --out runs\psf01 --auto --n 32 --frames 16 --bin 4 --seed 0 --z-mm 40 --d-mm 40 --pinhole-um 15
 
 `--auto` 会把曝光二分到 p99.9 落在 55% 满量程。`--frames 16` 平均降噪，
 `--settle 0.15` 是换图后的等待（SLM 60 Hz，等 2 帧以上再曝，避免拍到半帧）。
 
 ### 7.2 先判数据能不能用
 
-    python psf_check.py runs\psf01
+    python code/psf_check.py runs\psf01
 
 看五项：饱和比例（>1% 就降曝光）、边缘/整体比（>0.9 说明 PSF 顶到靶面）、
 质心漂移（>2 px 不稳）、两两相关（>0.95 说明掩模几乎一样）、有效秩
@@ -251,19 +269,19 @@ python random_lens_array.py --n 100 --seed 7        :: 换一版布局
 
 把针孔换成待测物，其余不动，**`--seed` 必须一样**，掩模才会是同一批：
 
-    python psf_capture.py --out runs\obj01 --n 32 --frames 16 --bin 4 --seed 0 --z-mm 40 --d-mm 40 --exposure-us 4000
+    python code/psf_capture.py --out runs\obj01 --n 32 --frames 16 --bin 4 --seed 0 --z-mm 40 --d-mm 40 --exposure-us 4000
 
 `--exposure-us` 填 7.1 那次的 `meta.json` 里的值，省得物这轮曝光不一致。
 
 ### 7.4 重建
 
-    python psf_recon.py --run runs\psf01 --obj runs\obj01\stack.npy --lam 0.01 --iters 300
+    python code/psf_recon.py --run runs\psf01 --obj runs\obj01\stack.npy --lam 0.01 --iters 300
 
 模型是 `y_m = h_m ⊛ x + n_m`，联合解卷积 + TV 正则 + 非负约束，FISTA 迭代。
 
 ### 7.5 代码自检（不需要光路）
 
-    python psf_recon.py --selftest runs\selftest
+    python code/psf_recon.py --selftest runs\selftest
 
 合成数据实测：直接平均基线 13.27 dB，重建 25.82 dB（+12.56 dB），
 说明解卷积和 TV 这条链是通的。真实性能另说。
@@ -315,7 +333,7 @@ max |white-black| > 2% FS      且      |diff| > 3% FS 的像素占比 > 1%
 加一片线偏振片（放在 LED 与面板之间，透光轴对准液晶摩擦方向）能把 8% 提到接近
 100%，等效信噪比提升一个数量级，是下一步最划算的硬件改进。
 
-## 10. 脚本清单
+## 10. 脚本清单（全部在 `code/` 目录）
 
 | 脚本 | 用途 |
 | --- | --- |
@@ -332,3 +350,16 @@ max |white-black| > 2% FS      且      |diff| > 3% FS 的像素占比 > 1%
 | `psf_recon.py` | FISTA + TV 联合重建（`--selftest` 自检、`--cmsub`） |
 | `rank_test.py` | 看 PSF 集合在去共模前后的奇异值谱 |
 | `diff_view.py` | 把差值的 npz 画成 PNG |
+
+## 11. 实测数据
+
+`data/2026-11-17/` 是唯一入库的实验数据，详见 [data/README.md](data/README.md)：
+
+| 子目录 | 内容 | 体积 |
+| --- | --- | --- |
+| `data/2026-11-17/raw/b_psf*` | PSF 采集、平场、差值 PSF（单张二元 0/π 掩模） | 13 MB |
+| `data/2026-11-17/raw/e_bin`、`e_flat` | 32 张随机掩模的箭头物体采集 + 平场 | 70 MB |
+| `data/2026-11-17/result/` | 结果包：`psf_d.npy`、`measure_32masks_minus_flat.npy`、箭头图、重建留档、光路照片，自带 README | 71 MB |
+
+有效性判据（PSF 边缘/中心 0.313、掩模两两相关 ≈0、90% 能量 28/32 奇异值）和
+失败案例的剔除理由都写在 `data/README.md` 里。本地实时采集仍写 `runs/`（不入库）。
