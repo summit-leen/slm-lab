@@ -1,0 +1,56 @@
+{
+  "created": "2026-11-17T22:35:59",
+  "slm": {
+    "width": 1024,
+    "height": 768,
+    "monitor": 1
+  },
+  "camera": {
+    "model": "daA3840-45um",
+    "full_scale": 4095,
+    "exposure_us": 1500.0,
+    "gain_db": 0.0,
+    "fps": 15.0,
+    "frames_averaged": 16,
+    "binning": 4,
+    "roi": null,
+    "width": 964,
+    "height": 544
+  },
+  "optics": {
+    "z_mm": 40.0,
+    "d_mm": 40.0,
+    "pinhole_um": null,
+    "wavelength_nm": 620.0,
+    "slm_pitch_um": 18.0
+  },
+  "masks": {
+    "kind": "binary",
+    "n": 1,
+    "seed": 0,
+    "focal_mm": 600.0
+  },
+  "stats": [
+    {
+      "i": 0,
+      "mean": 978.9263305664062,
+      "max": 3382.1875,
+      "sat_pct": 0.0,
+      "cx": 499.2742109894343,
+      "cy": 245.1261770597893,
+      "energy": 513364640.0
+    }
+  ],
+  "elapsed_s": 1.14,
+  "diff_of": [
+    "D:\\课题组\\slm\\runs\\b_psf",
+    "D:\\课题组\\slm\\runs\\b_psf_flat"
+  ],
+  "diff_stats": {
+    "mean": 6.061405658721924,
+    "std": 180.2692413330078,
+    "min": -735.0,
+    "max": 1421.8125,
+    "n_masks": 1
+  }
+}

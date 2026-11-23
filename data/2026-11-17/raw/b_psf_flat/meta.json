@@ -1,0 +1,45 @@
+{
+  "created": "2026-11-17T22:36:01",
+  "slm": {
+    "width": 1024,
+    "height": 768,
+    "monitor": 1
+  },
+  "camera": {
+    "model": "daA3840-45um",
+    "full_scale": 4095,
+    "exposure_us": 1500.0,
+    "gain_db": 0.0,
+    "fps": 15.0,
+    "frames_averaged": 16,
+    "binning": 4,
+    "roi": null,
+    "width": 964,
+    "height": 544
+  },
+  "optics": {
+    "z_mm": 40.0,
+    "d_mm": 40.0,
+    "pinhole_um": null,
+    "wavelength_nm": 620.0,
+    "slm_pitch_um": 18.0
+  },
+  "masks": {
+    "kind": "flat",
+    "n": 1,
+    "seed": 0,
+    "focal_mm": 600.0
+  },
+  "stats": [
+    {
+      "i": 0,
+      "mean": 972.8648681640625,
+      "max": 2138.75,
+      "sat_pct": 0.0,
+      "cx": 499.1705066667534,
+      "cy": 245.86154637829281,
+      "energy": 510185888.0
+    }
+  ],
+  "elapsed_s": 1.13
+}
