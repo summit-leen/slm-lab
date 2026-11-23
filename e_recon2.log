@@ -1,0 +1,13 @@
+D:\课题组\slm\psf_recon.py:16: SyntaxWarning: invalid escape sequence '\s'
+  python psf_recon.py --selftest runs\selftest
+单张 PSF 复用到 32 帧
+32 个掩模, 核 541x541, 视场 544x964
+  归一化：h、y 同除 223.26（lam=0.02 相当于原尺度 996.9）
+  iter    0  data cost 8447089.8730
+  iter   50  data cost 8446592.4343
+  iter  100  data cost 8446592.8050
+  iter  150  data cost 8446592.3804
+  iter  200  data cost 8446591.6953
+  iter  250  data cost 8446591.7587
+  iter  299  data cost 8446591.8799
+已保存 runs\e_recon2.npy

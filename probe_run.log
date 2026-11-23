@@ -1,0 +1,13 @@
+SLM window: display 1 1024x768 at (2560,0) scale=1.0 refresh=60 Hz
+SLM 1024x768, 3 个 random 掩模
+相机 daA3840-45um, 400x300 bin=4, 满量程 4095, 曝光 2452 us
+自动曝光（用第 0 个掩模）...
+  exposure   2452.0 us -> p99.9= 1791.0 ( 43.7% FS)
+  采用曝光 2452 us
+[1/3] mean=   635.1 max=   1853 sat= 0.00% centroid=(  200.0,   95.9)
+[2/3] mean=   634.9 max=   1860 sat= 0.00% centroid=(  200.0,   95.9)
+[3/3] mean=   634.6 max=   1849 sat= 0.00% centroid=(  200.0,   95.9)
+
+完成：3 张 PSF, stack (3, 300, 400) -> D:\课题组\slm\runs\probe
+耗时 1.8 s
+事件循环结束

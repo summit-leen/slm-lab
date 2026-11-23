@@ -1,0 +1,42 @@
+SLM window: display 1 1024x768 at (2560,0) scale=1.0 refresh=60 Hz
+SLM 1024x768, 32 个 random 掩模
+相机 daA3840-45um, 964x544 bin=4, 满量程 4095, 曝光 590 us
+自动曝光（用第 0 个掩模）...
+  exposure    590.0 us -> p99.9= 2191.5 ( 53.5% FS)
+  采用曝光 590 us
+[1/32] mean=   495.0 max=   2582 sat= 0.00% centroid=(  347.3,  238.4)
+[2/32] mean=   494.9 max=   2432 sat= 0.00% centroid=(  347.4,  238.6)
+[3/32] mean=   495.0 max=   2484 sat= 0.00% centroid=(  347.4,  238.4)
+[4/32] mean=   494.7 max=   2412 sat= 0.00% centroid=(  347.3,  238.4)
+[5/32] mean=   494.8 max=   2385 sat= 0.00% centroid=(  347.3,  238.4)
+[6/32] mean=   494.5 max=   2688 sat= 0.00% centroid=(  347.4,  238.5)
+[7/32] mean=   494.8 max=   2447 sat= 0.00% centroid=(  347.3,  238.3)
+[8/32] mean=   494.5 max=   2464 sat= 0.00% centroid=(  347.3,  238.6)
+[9/32] mean=   494.5 max=   2458 sat= 0.00% centroid=(  347.4,  238.4)
+[10/32] mean=   494.5 max=   2487 sat= 0.00% centroid=(  347.3,  238.4)
+[11/32] mean=   494.3 max=   2411 sat= 0.00% centroid=(  347.3,  238.5)
+[12/32] mean=   494.1 max=   2551 sat= 0.00% centroid=(  347.4,  238.4)
+[13/32] mean=   494.0 max=   2786 sat= 0.00% centroid=(  347.3,  238.5)
+[14/32] mean=   494.0 max=   2421 sat= 0.00% centroid=(  347.3,  238.4)
+[15/32] mean=   494.0 max=   2446 sat= 0.00% centroid=(  347.3,  238.4)
+[16/32] mean=   494.1 max=   2634 sat= 0.00% centroid=(  347.3,  238.3)
+[17/32] mean=   494.0 max=   2471 sat= 0.00% centroid=(  347.3,  238.4)
+[18/32] mean=   493.8 max=   2513 sat= 0.00% centroid=(  347.3,  238.4)
+[19/32] mean=   493.6 max=   2725 sat= 0.00% centroid=(  347.3,  238.5)
+[20/32] mean=   493.6 max=   2504 sat= 0.00% centroid=(  347.3,  238.5)
+[21/32] mean=   493.3 max=   2872 sat= 0.00% centroid=(  347.3,  238.4)
+[22/32] mean=   493.1 max=   2513 sat= 0.00% centroid=(  347.4,  238.5)
+[23/32] mean=   493.1 max=   2473 sat= 0.00% centroid=(  347.4,  238.5)
+[24/32] mean=   493.2 max=   2450 sat= 0.00% centroid=(  347.3,  238.4)
+[25/32] mean=   492.8 max=   2492 sat= 0.00% centroid=(  347.4,  238.4)
+[26/32] mean=   493.0 max=   2531 sat= 0.00% centroid=(  347.3,  238.3)
+[27/32] mean=   492.9 max=   2429 sat= 0.00% centroid=(  347.2,  238.4)
+[28/32] mean=   493.2 max=   2481 sat= 0.00% centroid=(  347.4,  238.5)
+[29/32] mean=   493.0 max=   2703 sat= 0.00% centroid=(  347.4,  238.5)
+[30/32] mean=   493.2 max=   2434 sat= 0.00% centroid=(  347.5,  238.5)
+[31/32] mean=   492.8 max=   2676 sat= 0.00% centroid=(  347.4,  238.4)
+[32/32] mean=   492.8 max=   2349 sat= 0.00% centroid=(  347.4,  238.5)
+
+完成：32 张 PSF, stack (32, 544, 964) -> D:\课题组\slm\runs\psf_b
+耗时 36.4 s
+事件循环结束

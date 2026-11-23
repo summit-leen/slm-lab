@@ -1,0 +1,14 @@
+SLM window: display 1 1024x768 at (2560,0) scale=1.0 refresh=60 Hz
+SLM 1024x768, 4 个 shutter 掩模
+相机 daA3840-45um, 400x300 bin=4, 满量程 4095, 曝光 966 us
+自动曝光（用第 0 个掩模）...
+  exposure    966.0 us -> p99.9= 2687.5 ( 65.6% FS)
+  采用曝光 966 us
+[1/4] mean=  1860.1 max=   3579 sat= 0.00% centroid=(  203.9,  137.8)
+[2/4] mean=  1860.1 max=   3582 sat= 0.00% centroid=(  203.9,  137.8)
+[3/4] mean=  1860.2 max=   3598 sat= 0.00% centroid=(  203.9,  137.8)
+[4/4] mean=  1860.3 max=   3593 sat= 0.00% centroid=(  203.9,  137.8)
+
+完成：4 张 PSF, stack (4, 300, 400) -> D:\课题组\slm\runs\shutter1
+耗时 5.2 s
+事件循环结束

@@ -1,0 +1,51 @@
+exists=True size=68517
+chars=67233
+viewBox=['0 0 3200 1800']
+text nodes=40
+  | 红光 LED
+  | LED 620 nm
+  | GCI-060401
+  | Ø100 µm 针孔
+  | 相干源
+  | 480 mm
+  | （示意，非等比）
+  | 标定孔 Ø150 µm（放大示出，右距 12 mm）
+  | 物面卡 60×60 mm
+  | 箭头 3 mm（透过率图案）
+  | 标定孔 Ø150 µm（放大示出）
+  | 两孔间隔 12 mm
+  | HDMI
+  | DC
+  | GCI-770202
+  | 像素 18 µm ｜ 相位型
+  | SLM 1024×768
+  | 有效面板 18.43 × 13.82 mm
+  | 相机（裸靶面）
+  | 裸靶面 7.72 × 4.36 mm
+  | Basler daA3840-45um
+  | 5 mm
+  | 30 mm
+  | 40 mm
+  | 散斑 1.38 mm
+  | 基于可编程 SLM 的多掩膜无镜成像光路
+  | Inset A｜物面卡（正面）
+  | 12 mm
+  | 3 mm
+  | Ø150 µm
+  | 60 × 60 mm
+  | Inset B｜靶面散斑（32 掩模之一）
+  | 1.38 mm
+  | 1.03 mm
+  | 视场 5.8 × 3.3 mm（虚线框）
+  | 关键指标
+  | 视场 5.8 × 3.3 mm
+  | 分辨率 1.03 mm
+  | 散斑 1.38 mm
+  | 相干长度 3 mm
+rect     count=20
+circle   count=0
+ellipse  count=516
+line     count=95
+path     count=0
+polygon  count=15
+text     count=40

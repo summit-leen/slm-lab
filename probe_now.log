@@ -1,0 +1,8 @@
+SLM window: display 1 1024x768 at (2560,0) scale=1.0 refresh=60 Hz
+SLM 1024x768, 1 个 flat 掩模
+相机 daA3840-45um, 964x544 bin=4, 满量程 4095, 曝光 2000 us
+[1/1] mean=   853.9 max=   3055 sat= 0.00% centroid=(  514.7,  219.2)
+
+完成：1 张 PSF, stack (1, 544, 964) -> D:\课题组\slm\runs\probe_now
+耗时 0.6 s
+事件循环结束

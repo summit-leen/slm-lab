@@ -1,0 +1,4 @@
+SLM window: display 1 1024x768 at (2560,0) scale=1.0 refresh=60 Hz
+SLM 1024x768，2 Hz 黑白闪烁，占空比 0.5，90 s
+（Ctrl+C 停止；SLM 面板上应看到整屏黑/白切换）
+结束

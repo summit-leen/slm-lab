@@ -1,0 +1,7 @@
+usage: psf_capture.py [-h] --out OUT [--n N] [--mask {random,lens,flat}]
+                      [--focal FOCAL] [--seed SEED] [--frames FRAMES]
+                      [--exposure-us EXPOSURE_US] [--gain GAIN] [--fps FPS]
+                      [--auto] [--settle SETTLE] [--dark-frames DARK_FRAMES]
+                      [--z-mm Z_MM] [--d-mm D_MM] [--pinhole-um PINHOLE_UM]
+                      [--bin BIN] [--roi ROI] [--monitor MONITOR]
+psf_capture.py: error: argument --mask: invalid choice: 'blank' (choose from random, lens, flat)

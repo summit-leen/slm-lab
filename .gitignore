@@ -1,0 +1,17 @@
+# ---- 体积大的实验数据 / 运行产物（不入库）----
+runs/
+captures/
+result_20261117/
+result_20261117.zip
+*.zip
+
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

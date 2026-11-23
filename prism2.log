@@ -1,0 +1,18 @@
+SLM window: display 1 1024x768 at (2560,0) scale=1.0 refresh=60 Hz
+SLM 1024x768, 3 个 prism 掩模
+Exception in thread Thread-2 (run_capture):
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\课题组\slm\psf_capture.py", line 252, in run_capture
+    cam = Cam(args.exposure_us, args.gain, args.fps, args.bin, _parse_roi(args.roi))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\课题组\slm\psf_capture.py", line 104, in __init__
+    self.cam = pylon.InstantCamera(tlf.CreateDevice(devs[0]))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\19414\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pypylon\pylon.py", line 2963, in CreateDevice
+    return _pylon.TlFactory_CreateDevice(self, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_genicam.RuntimeException: Failed to open device '\\?\usb#vid_2676&pid_ba06&mi_00#7&50e51c9&0&0000#{79bfeeca-947f-11e1-bc58-001b2163ef96}' for XML file download. Error: 'Device is exclusively opened by another client.' : RuntimeException thrown (file 'PylonUsbTL.cpp', line 507)

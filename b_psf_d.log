@@ -1,0 +1,4 @@
+runs\b_psf - runs\b_psf_flat
+  PSF  1 张, 形状 (544, 964)
+  差图 mean=6.06 std=180.27 min=-735.0 max=1421.8
+  已写入 runs\b_psf_d

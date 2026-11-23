@@ -1,0 +1,4 @@
+runs\b_obj_flat - runs\b_psf_flat
+  PSF  1 张, 形状 (544, 964)
+  差图 mean=-63.15 std=111.56 min=-826.0 max=442.6
+  已写入 runs\b_shadow

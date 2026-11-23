@@ -1,0 +1,39 @@
+SLM window: display 1 1024x768 at (2560,0) scale=1.0 refresh=60 Hz
+SLM 1024x768, 32 个 binary 掩模
+相机 daA3840-45um, 960x540 bin=4, 满量程 4095, 曝光 20 us
+[1/32] mean=  2871.7 max=   4095 sat=46.04% centroid=(  590.0,  261.8)
+[2/32] mean=  2872.3 max=   4095 sat=45.91% centroid=(  590.0,  261.9)
+[3/32] mean=  2872.0 max=   4095 sat=46.00% centroid=(  589.9,  261.9)
+[4/32] mean=  2870.6 max=   4095 sat=45.99% centroid=(  590.0,  261.9)
+[5/32] mean=  2870.9 max=   4095 sat=46.02% centroid=(  590.1,  261.9)
+[6/32] mean=  2870.8 max=   4095 sat=45.98% centroid=(  590.1,  261.9)
+[7/32] mean=  2871.0 max=   4095 sat=45.97% centroid=(  590.0,  261.9)
+[8/32] mean=  2871.4 max=   4095 sat=46.14% centroid=(  590.0,  261.9)
+[9/32] mean=  2872.5 max=   4095 sat=46.02% centroid=(  590.0,  262.0)
+[10/32] mean=  2871.0 max=   4095 sat=45.97% centroid=(  590.0,  262.0)
+[11/32] mean=  2871.9 max=   4095 sat=45.93% centroid=(  589.9,  262.0)
+[12/32] mean=  2871.3 max=   4095 sat=46.04% centroid=(  590.2,  261.9)
+[13/32] mean=  2872.5 max=   4095 sat=45.97% centroid=(  590.0,  262.0)
+[14/32] mean=  2873.1 max=   4095 sat=46.06% centroid=(  590.1,  261.9)
+[15/32] mean=  2870.4 max=   4095 sat=45.91% centroid=(  590.1,  261.8)
+[16/32] mean=  2870.9 max=   4095 sat=45.99% centroid=(  590.1,  261.9)
+[17/32] mean=  2871.3 max=   4095 sat=45.95% centroid=(  590.0,  261.9)
+[18/32] mean=  2873.1 max=   4095 sat=46.32% centroid=(  590.1,  261.9)
+[19/32] mean=  2872.6 max=   4095 sat=45.99% centroid=(  590.3,  262.0)
+[20/32] mean=  2872.7 max=   4095 sat=46.12% centroid=(  590.0,  262.0)
+[21/32] mean=  2870.5 max=   4095 sat=45.96% centroid=(  589.9,  262.0)
+[22/32] mean=  2872.0 max=   4095 sat=46.08% centroid=(  590.2,  262.0)
+[23/32] mean=  2871.8 max=   4095 sat=45.98% centroid=(  590.1,  261.8)
+[24/32] mean=  2872.0 max=   4095 sat=45.96% centroid=(  590.1,  261.8)
+[25/32] mean=  2871.7 max=   4095 sat=45.89% centroid=(  590.1,  262.0)
+[26/32] mean=  2869.7 max=   4095 sat=46.00% centroid=(  590.0,  261.9)
+[27/32] mean=  2871.8 max=   4095 sat=45.77% centroid=(  590.2,  261.9)
+[28/32] mean=  2870.3 max=   4095 sat=45.89% centroid=(  590.1,  261.9)
+[29/32] mean=  2871.4 max=   4095 sat=45.82% centroid=(  590.1,  261.9)
+[30/32] mean=  2871.2 max=   4095 sat=46.01% centroid=(  590.2,  262.0)
+[31/32] mean=  2871.7 max=   4095 sat=45.97% centroid=(  590.2,  261.8)
+[32/32] mean=  2870.5 max=   4095 sat=45.96% centroid=(  590.1,  261.9)
+
+完成：32 张 PSF, stack (32, 540, 960) -> D:\课题组\slm\runs\g_bin
+耗时 19.3 s
+事件循环结束

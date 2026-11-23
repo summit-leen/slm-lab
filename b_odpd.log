@@ -1,0 +1,4 @@
+runs\b_obj_d - runs\b_psf_d
+  PSF  1 张, 形状 (544, 964)
+  差图 mean=-0.88 std=236.31 min=-1600.6 max=1706.4
+  已写入 runs\b_odpd
