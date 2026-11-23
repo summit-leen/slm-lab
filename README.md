@@ -3,6 +3,10 @@
 给液晶 SLM（当作第二块显示器使用）输出相位/灰度图案的最小可用环境，
 外加一套把它当"编码孔径成像系统"用的采集—判据—重建工具链。
 
+> **2026-11-23 的随机透镜阵列 / 散斑实验**（七种图案、14 组相机帧、轴向 PSF 扫描）
+> 单独放在 <https://github.com/summit-leen/random-lens-array-2026-11-23>，
+> 那边用的是本仓库的脚本，数据与过程记录在它的 `docs/experiment-log.md`。
+
 ## 0. 仓库结构
 
 ```
@@ -350,6 +354,13 @@ max |white-black| > 2% FS      且      |diff| > 3% FS 的像素占比 > 1%
 | `psf_recon.py` | FISTA + TV 联合重建（`--selftest` 自检、`--cmsub`） |
 | `rank_test.py` | 看 PSF 集合在去共模前后的奇异值谱 |
 | `diff_view.py` | 把差值的 npz 画成 PNG |
+| `cam_stack.py` | 抓 N 帧求平均（`--exp/--n/--gain/--out`），打印 mean/p99.9/饱和/帧间噪声 |
+| `dense_mla.py` | 六角密排微透镜阵列（按 `1/f=1/d+1/s` 定 f，`--area-mm` 定簇大小） |
+| `hybrid_pattern.py` | 随机透镜阵列 + 随机相位背景（`--bg-max` 调背景调制深度） |
+| `random_phase.py` | 逐像素随机相位（散斑），`--block` 可做块状随机相位 |
+| `slm_plain.py` | 在面板上显示单色灰阶（`--grey 0` 做黑屏参考帧） |
+| `lens_focal_sweep.py` | 已废弃：早期用 `slm_show.py --file` 逐窗口切换的焦距扫描 |
+| `psf_scan2.py` | 单进程轴向 PSF 扫描（改 f 等效移焦，一次开窗一次开相机） |
 
 ## 11. 实测数据
 

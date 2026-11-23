@@ -13,3 +13,6 @@ __pycache__/
 .idea/
 Thumbs.db
 desktop.ini
+
+# ---- 独立导出的实验仓库（自己是个 git 仓库）----
+repo_20261123/
