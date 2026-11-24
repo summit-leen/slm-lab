@@ -1,0 +1,6 @@
+{
+ "array": "patterns/rla_dense_phase.npy",
+ "bg_max": 255,
+ "seed": 20261123,
+ "mean_gray": 132.88630803426108
+}
