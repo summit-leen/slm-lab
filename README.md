@@ -7,6 +7,10 @@
 > 单独放在 <https://github.com/summit-leen/random-lens-array-2026-11-23>，
 > 那边用的是本仓库的脚本，数据与过程记录在它的 `docs/experiment-log.md`。
 
+> **2026-11-24 的定制散斑与 PSF 反卷积实验**（图案 A/B/C、W1/W2/W3、实测帧、重建结果）
+> 单独放在 <https://github.com/summit-leen/slm-work-2026-11-24>，
+> 主文档为那边的 `docs/2026-11-24-定制散斑与PSF反卷积.md`。
+
 ## 0. 仓库结构
 
 ```
