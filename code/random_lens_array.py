@@ -74,6 +74,10 @@ def build_layout(width, height, args, rng):
     max_tries = max(20000, args.n * 3000)
 
     r_cap = 0.5 * min(width, height) - margin
+    # --area-mm > 0 时把所有透镜约束在半径 area_r 的圆内（成像/拼接用）
+    area_r = 0.5 * args.area_mm * 1e-3 / p if args.area_mm > 0 else 0.0
+    area_cx = 0.5 * (width - 1.0) if args.cx is None else args.cx
+    area_cy = 0.5 * (height - 1.0) if args.cy is None else args.cy
     while len(lenses) < args.n and tries < max_tries:
         tries += 1
         f = rng.uniform(args.f_min, args.f_max) * 1e-3
@@ -84,10 +88,18 @@ def build_layout(width, height, args, rng):
         # 半径分布：size_skew<1 偏大，>1 偏小；默认略偏大，画面更像参考图
         u = rng.random()
         r = args.r_min + (r_lim - args.r_min) * (u ** args.size_skew)
-        if 2.0 * r + 2.0 * margin >= min(width, height):
-            continue
-        cx = rng.uniform(r + margin, width - 1.0 - r - margin)
-        cy = rng.uniform(r + margin, height - 1.0 - r - margin)
+        if area_r > 0:
+            if r + margin >= area_r:
+                continue
+            rr = math.sqrt(rng.random()) * (area_r - r - margin)
+            th = rng.random() * 2.0 * math.pi
+            cx = area_cx + rr * math.cos(th)
+            cy = area_cy + rr * math.sin(th)
+        else:
+            if 2.0 * r + 2.0 * margin >= min(width, height):
+                continue
+            cx = rng.uniform(r + margin, width - 1.0 - r - margin)
+            cy = rng.uniform(r + margin, height - 1.0 - r - margin)
 
         ok = True
         for L in lenses:
@@ -317,6 +329,10 @@ def main(argv=None) -> int:
                     help="半径分布指数：<1 偏大, >1 偏小")
     ap.add_argument("--gap", type=float, default=4.0, help="透镜边缘最小间隔 px")
     ap.add_argument("--margin", type=float, default=6.0, help="距面板边缘 px")
+    ap.add_argument("--area-mm", type=float, default=0.0,
+                    help="把透镜约束在直径 area-mm 的圆内（0 = 铺满整块面板）")
+    ap.add_argument("--cx", type=float, default=None, help="圆的中心 x px（默认面板中心）")
+    ap.add_argument("--cy", type=float, default=None, help="圆的中心 y px（默认面板中心）")
     ap.add_argument("--overlap", action="store_true", help="允许透镜交叠")
     ap.add_argument("--pitch", type=float, default=PITCH_UM, help="像素间距 um")
     ap.add_argument("--lam", type=float, default=LAM_NM, help="波长 nm")

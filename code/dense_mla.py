@@ -55,6 +55,9 @@ def main() -> int:
     ap.add_argument("--gamma", type=float, default=400.0)
     ap.add_argument("--cx", type=float, default=512.0)
     ap.add_argument("--cy", type=float, default=384.0)
+    ap.add_argument("--jitter", type=float, default=0.0,
+                    help="位置抖动（占 pitch 的比例，0=规则栅格，0.35 左右仍不重叠）")
+    ap.add_argument("--seed", type=int, default=20261123)
     ap.add_argument("--save", default=None)
     ap.add_argument("--diag", action="store_true")
     ap.add_argument("--show", action="store_true")
@@ -73,6 +76,17 @@ def main() -> int:
     R = args.area_mm * 1e-3 / 2 / p    # px
     pitch = 2 * r + args.gap
     pts = hex_points(args.cx, args.cy, pitch, R)
+    if args.jitter > 0:
+        rng = np.random.default_rng(args.seed)
+        amp = args.jitter * pitch
+        jit = []
+        for x, y in pts:
+            dx, dy = rng.uniform(-amp, amp, 2)
+            # 抖动后必须仍在有效区内，且与已有的保持不重叠
+            if math.hypot(x + dx - args.cx, y + dy - args.cy) + r > R:
+                dx = dy = 0.0
+            jit.append((x + dx, y + dy))
+        pts = jit
     ns = argparse.Namespace(pitch=args.pitch, lam=args.lam, gamma=args.gamma,
                             sign=-1, tilt=(0.0, 0.0))
     lenses = [rla.Lens(x, y, r, f, p) for x, y in pts]
